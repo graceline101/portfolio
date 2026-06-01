@@ -660,7 +660,7 @@
 
 <script>
   // Backend API URL - UPDATE THIS WITH YOUR RENDER URL AFTER DEPLOYMENT
-  const API_BASE_URL = 'https://your-backend-api.onrender.com';
+  const API_BASE_URL = 'https://backendapi-bitq.onrender.com';
   
   // Check API health
   async function checkAPIHealth() {
@@ -740,9 +740,17 @@
   const cvBtn = document.getElementById('cvDownloadBtn');
   if (cvBtn) {
     cvBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      // Create a simple CV PDF download (you can replace with actual PDF)
-      alert('CV Download: Please upload your actual CV PDF file to the server.\n\nFor now, the CV is available upon request via email.');
+      
+      const cvFileName = 'grace_cv.pdf';
+      
+      
+      cvBtn.href = cvFileName;
+     
+      setTimeout(() => {
+        
+        console.log("CV download attempted: make sure '" + cvFileName + "' is in the same folder.");
+      }, 100);
+      
     });
   }
   
